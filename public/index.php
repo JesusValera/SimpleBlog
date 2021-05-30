@@ -12,10 +12,9 @@ $mapping = [
     '/test' => TestController::class,
 ];
 
-$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
-
-$controllerClass = $mapping[$pathInfo] ?? NotFoundController::class;
+$request = Request::createFromGlobals();
+$controllerClass = $mapping[$request->getPathInfo()] ?? NotFoundController::class;
 $controller = new $controllerClass();
 
-$request = Request::createFromGlobals();
-echo $controller->invoke($request);
+$response = $controller->invoke($request);
+echo $response->getContent();

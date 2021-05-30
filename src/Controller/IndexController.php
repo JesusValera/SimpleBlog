@@ -11,6 +11,6 @@ final class IndexController extends BaseController
 {
     public function invoke(Request $request): Response
     {
-        return new Response('index');
+        return new Response($this->twig->render('index.html.twig', []));
     }
 }

@@ -11,6 +11,6 @@ final class TestController extends BaseController
 {
     public function invoke(Request $request): Response
     {
-        return new Response('test');
+        return new Response($this->twig->render('test.html.twig', []));
     }
 }
