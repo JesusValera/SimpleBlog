@@ -1,0 +1,39 @@
+{
+    "description": "A simple blog",
+    "require": {
+        "php": ">=7.4",
+        "symfony/http-foundation": "^5.2"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.2",
+        "phpunit/phpunit": "^9.5",
+        "vimeo/psalm": "^4.6",
+        "friendsofphp/php-cs-fixer": "^2.18",
+        "symfony/panther": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test-all": [
+            "@test-quality",
+            "@test"
+        ],
+        "test-quality": [
+            "@csrun",
+            "@psalm"
+        ],
+        "test": "./vendor/bin/phpunit",
+        "coverage": "XDEBUG_MODE=coverage ./vendor/bin/phpunit --coverage-html coverage",
+        "psalm": "./vendor/bin/psalm",
+        "csfix": "./vendor/bin/php-cs-fixer fix",
+        "csrun": "./vendor/bin/php-cs-fixer fix --dry-run"
+    }
+}
