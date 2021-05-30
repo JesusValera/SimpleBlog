@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block title %}Post {{ post.id }}{% endblock %}
+{% block content %}
+    <h1>{{ post.title }}</h1>
+    <h3>{{ post.updated_at|date('Y-m-d') }}</h3>
+    <span class="content">{{ post.content }}</span>
+    <hr>
+    <p>{{ post.author_name }}</p>
+{% endblock %}

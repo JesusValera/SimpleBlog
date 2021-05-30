@@ -2,14 +2,14 @@
 
 use App\Controller\IndexController;
 use App\Controller\NotFoundController;
-use App\Controller\TestController;
+use App\Controller\PostController;
 use Symfony\Component\HttpFoundation\Request;
 
 require_once "./../vendor/autoload.php";
 
 $mapping = [
     '/' => IndexController::class,
-    '/test' => TestController::class,
+    '/post' => PostController::class,
 ];
 
 $request = Request::createFromGlobals();
