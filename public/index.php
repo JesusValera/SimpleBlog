@@ -1,19 +1,23 @@
 <?php
 
 use App\Controller\AdminController;
+use App\Controller\CreatePostController;
 use App\Controller\IndexController;
 use App\Controller\LoginController;
 use App\Controller\NotFoundController;
-use App\Controller\PostController;
+use App\Controller\ShowPostController;
+use App\Controller\UpdatePostController;
 use Symfony\Component\HttpFoundation\Request;
 
 require_once "./../vendor/autoload.php";
 
 $mapping = [
     '/' => IndexController::class,
-    '/post' => PostController::class,
+    '/post' => ShowPostController::class,
     '/login' => LoginController::class,
     '/admin' => AdminController::class,
+    '/admin/create' => CreatePostController::class,
+    '/admin/update' => UpdatePostController::class,
 ];
 
 $request = Request::createFromGlobals();

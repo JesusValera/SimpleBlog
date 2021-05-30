@@ -7,14 +7,14 @@
     <button type="submit" class="btn btn-primary">Log out</button>
   </form>
 
-  <form action="#" method="post">
+  <form action="/index.php/admin/create" method="post">
     <button type="submit" class="btn btn-primary">Create Post</button>
   </form>
 
   <hr>
   <ul>
     {% for post in posts %}
-      <li>{{ post.title }} <a href="#">Edit</a></li>
+      <li>{{ post.title }} <a href="/index.php/admin/update">Edit</a></li>
     {% endfor %}
   </ul>
 {% endblock %}

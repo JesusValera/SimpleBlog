@@ -7,11 +7,11 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class PostController extends BaseController
+final class UpdatePostController extends BaseController
 {
     public function invoke(Request $request): Response
     {
-        return new Response($this->twig->render('post.html.twig', ['post' => $this->getPost()]));
+        return new Response($this->twig->render('create-post.html.twig', ['post' => $this->getPost()]));
     }
 
     private function getPost(): array

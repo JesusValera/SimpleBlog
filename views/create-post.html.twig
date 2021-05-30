@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+    <h1>Login</h1>
+
+    <form action="/index.php/admin" method="post">
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" class="form-control" id="title" placeholder="Title" value="{{ post.title ?? '' }}">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" placeholder="Description" value="{{ post.content ?? '' }}">
+        </div>
+
+        <input type="hidden" name="post_id" value="{{ post.id ?? null }}">
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+{% endblock %}
