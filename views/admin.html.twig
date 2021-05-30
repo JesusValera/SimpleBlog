@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block title %}Admin{% endblock %}
+{% block content %}
+  <h1>Hello Admin!</h1>
+
+  <form action="/index.php/login" method="post">
+    <button type="submit" class="btn btn-primary">Log out</button>
+  </form>
+
+  <form action="#" method="post">
+    <button type="submit" class="btn btn-primary">Create Post</button>
+  </form>
+
+  <hr>
+  <ul>
+    {% for post in posts %}
+      <li>{{ post.title }} <a href="#">Edit</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
