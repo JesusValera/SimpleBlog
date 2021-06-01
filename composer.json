@@ -1,10 +1,13 @@
 {
     "description": "A simple blog",
     "require": {
+        "doctrine/orm": "*",
         "php": ">=7.4",
         "ext-zip": "*",
         "symfony/http-foundation": "^5.2",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "vlucas/phpdotenv": "^5.3",
+        "doctrine/migrations": "^3.1"
     },
     "require-dev": {
         "symfony/var-dumper": "^5.2",

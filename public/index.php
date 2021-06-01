@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 
 require_once "./../vendor/autoload.php";
 
+include dirname(__DIR__) . '/config/bootstrap.php';
+
 $mapping = [
     '/'             => IndexController::class,
     '/post'         => ShowPostController::class,
