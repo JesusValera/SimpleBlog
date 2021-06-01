@@ -11,6 +11,6 @@ final class CreatePostController extends BaseController
 {
     public function invoke(Request $request): Response
     {
-        return new Response($this->twig->render('create-post.html.twig'));
+        return $this->renderTemplate('create-post.html.twig');
     }
 }

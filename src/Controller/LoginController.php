@@ -18,6 +18,6 @@ final class LoginController extends BaseController
             return new RedirectResponse('/index.php/admin');
         }
 
-        return new Response($this->twig->render('login.html.twig'));
+        return $this->renderTemplate('login.html.twig');
     }
 }

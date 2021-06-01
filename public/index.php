@@ -12,16 +12,19 @@ use Symfony\Component\HttpFoundation\Request;
 require_once "./../vendor/autoload.php";
 
 $mapping = [
-    '/' => IndexController::class,
-    '/post' => ShowPostController::class,
-    '/login' => LoginController::class,
-    '/admin' => AdminController::class,
+    '/'             => IndexController::class,
+    '/post'         => ShowPostController::class,
+    '/login'        => LoginController::class,
+    '/admin'        => AdminController::class,
     '/admin/create' => CreatePostController::class,
     '/admin/update' => UpdatePostController::class,
 ];
 
 $request = Request::createFromGlobals();
 $controllerClass = $mapping[$request->getPathInfo()] ?? NotFoundController::class;
+
+// Check if the user has access to this $controller here (middleware),
+// if not, return 'OopsController::class'.
 $controller = new $controllerClass();
 
 $response = $controller->invoke($request);

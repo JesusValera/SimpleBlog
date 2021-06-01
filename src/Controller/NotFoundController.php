@@ -11,6 +11,6 @@ final class NotFoundController extends BaseController
 {
     public function invoke(Request $request): Response
     {
-        return new Response($this->twig->render('not-found.html.twig', []));
+        return $this->renderTemplate('not-found.html.twig');
     }
 }
