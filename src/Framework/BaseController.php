@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Framework;
 
-use App\Repository\PostRepository;
-use App\Repository\PostRepositoryInterface;
+use App\Blog\Repository\PostRepository;
+use App\Blog\Repository\PostRepositoryInterface;
 use Exception;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;

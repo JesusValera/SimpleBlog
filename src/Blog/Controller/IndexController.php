@@ -2,14 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\Controller;
 
-use App\Repository\PostRepository;
-use App\Repository\PostRepositoryInterface;
+use App\Framework\BaseController;
+use App\Blog\Repository\PostRepository;
+use App\Blog\Repository\PostRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-final class UpdatePostController extends BaseController
+final class IndexController extends BaseController
 {
     public function invoke(Request $request): Response
     {
@@ -17,8 +18,8 @@ final class UpdatePostController extends BaseController
         $postRepository = $this->resolveDependencies(PostRepositoryInterface::class);
 
         return $this->renderTemplate(
-            'create-post.html.twig',
-            ['post' => $postRepository->getPostById('123')]
+            'index.html.twig',
+            ['posts' => $postRepository->getPosts()]
         );
     }
 }

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Models;
+namespace App\Blog\Models;
 
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;

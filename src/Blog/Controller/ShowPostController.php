@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Controller;
+namespace App\Blog\Controller;
 
+use App\Framework\BaseController;
 use App\Repository\PostRepository;
 use App\Repository\PostRepositoryInterface;
 use Symfony\Component\HttpFoundation\Request;
