@@ -28,10 +28,7 @@ abstract class BaseController
 
     private function setupDependencies(): array
     {
-        return [
-            PostRepositoryInterface::class => static fn (): PostRepositoryInterface => new PostRepository(),
-            // ...
-        ];
+        return include dirname(__DIR__) . '/../config/dependencies.php';
     }
 
     private function setupTwig(): Environment
